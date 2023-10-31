@@ -15,7 +15,7 @@ app.get('/api/item/:slug', (req, res) => {
 });
 
 app.post('/api/email', (req, res) => {
-  console.log("TEST")
+  res.end(JSON.stringify(req));
 });
 
 
