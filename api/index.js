@@ -1,5 +1,6 @@
 const app = require('express')();
 const { v4 } = require('uuid');
+var postmark = require("postmark");
 
 app.get('/api', (req, res) => {
   const path = `/api/item/${v4()}`;
@@ -9,9 +10,13 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/api/item/:slug', (req, res) => {
-  
+  const { slug } = req.params;
+  res.end(`Item: ${slug}`);
 });
 
+app.post('/api/email', (req, res) => {
+  console.log("TEST")
+});
 
 
 module.exports = app;
