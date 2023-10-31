@@ -11,10 +11,12 @@ app.get('/api', (req, res) => {
 
 app.get('/api/item/:slug', (req, res) => {
   const { slug } = req.params;
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.end(`Item: ${slug}`);
 });
 
 app.post('/api/email', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.end(JSON.stringify(req));
 });
 
